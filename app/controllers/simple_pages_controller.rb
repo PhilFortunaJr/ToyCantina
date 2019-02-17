@@ -7,4 +7,11 @@ class SimplePagesController < ApplicationController
 
   def contact
   end
+
+  def orders
+  end
+
+  def landing_page
+     @featured_product = Product.first
+  end
 end
