@@ -1,1 +1,7 @@
-<p>hi</p>
+<div class="row">
+  <% @orders.each do |order| %>
+    <div class="col-sm">
+      <h1>Order # <%= order.id %></h1>
+    </div><!-- /col -->
+  <% end %>
+</div>
