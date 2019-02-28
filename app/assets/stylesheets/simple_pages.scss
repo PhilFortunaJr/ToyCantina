@@ -11,7 +11,7 @@ body {
 }
 
 div {
-  padding: 5em;
+  padding: 5px;
 }
 
 h1 {
@@ -73,8 +73,26 @@ form {
   background-color: white;
 }
 
-.landing_page {
-  
+.landing-page {
+  margin-top: 5px;
+}
+
+
+.carousel {
+  max-height: 5%;
+  max-width: 30%;
+  margin: 0 auto;
+  // overflow: hidden;
+}
+
+.carousel-control-next {
+  margin-bottom: 1em;
+  margin-top: 1em;
+}
+
+.carousel-control-prev {
+  margin-bottom: 1em;
+  margin-top: 1em;
 }
 
 // nav a:hover {
