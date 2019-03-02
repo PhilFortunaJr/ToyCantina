@@ -51,12 +51,13 @@
           </ul>
         </li> -->
       </ul>
-      <form class="navbar-form navbar-left">
-        <div class="form-group">
-          <input type="text" class="form-control" placeholder="Search">
-        </div>
-      </form>
-        <button type="submit" class="btn btn-sm">Submit</button>
+      <div class="navbar-form navbar-left form-group">
+          <%= form_with(url: products_path, method: 'get', local: true) do |form| %>
+            <%= form.label :q, 'Search for:' %>
+            <%= form.text_field :q, id: 'q', value: params[:q] %>
+            <%= form.submit 'Search' %>
+          <% end %>
+      </div>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
