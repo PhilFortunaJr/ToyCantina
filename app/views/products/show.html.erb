@@ -1,29 +1,38 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @product.name %>
-</p>
+<div class="container-fluid product-section">
 
-<p>
-  <strong>Description:</strong>
-  <%= @product.description %>
-</p>
+  <p>
+    <strong>Name:</strong>
+    <%= @product.name %>
+  </p>
 
-<p>
-  <strong>Image url:</strong>
-  <%= @product.image_url %>
-</p>
+  <p>
+    <%= image_tag(@product.image_url, class: "img-responsive product-show") %>
+  </p>
 
-<p>
-  <strong>Year:</strong>
-  <%= @product.year %>
-</p>
+  <p>
+    <strong>Description:</strong>
+    <%= @product.description %>
+  </p>
 
-<p>
-  <strong>Price:</strong>
-  <%= @product.price %>
-</p>
+  <p>
+    <strong>Year:</strong>
+    <%= @product.year %>
+  </p>
 
-<%= link_to 'Edit', edit_product_path(@product) %> |
-<%= link_to 'Back', products_path %>
+  <p>
+    <strong>Price:</strong>
+    <%= @product.price %>
+  </p>
+
+  <%= link_to 'Edit', edit_product_path(@product) %> |
+  <%= link_to 'Back', products_path %>
+</div>
+
+<div class="container-fluid comment-section">
+  <p>
+    <%= @product.highest_rating_comment %>
+    <%= @product.lowest_rating_comment %>
+  </p>
+</div> 
