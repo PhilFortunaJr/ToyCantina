@@ -17,6 +17,11 @@
   </p>
 
   <p>
+    <strong>Average Rating:</strong>
+    <div class="rated" data-score="<%= @product.average_rating %>"></div>
+  </p>
+
+  <p>
     <strong>Year:</strong>
     <%= @product.year %>
   </p>
@@ -34,5 +39,7 @@
   <p>
     <%= @product.highest_rating_comment %>
     <%= @product.lowest_rating_comment %>
+    <%= render 'new_comment' %>
+    <%= render 'comments' %>
   </p>
-</div> 
+</div>
