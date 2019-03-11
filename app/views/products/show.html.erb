@@ -36,10 +36,12 @@
 </div>
 
 <div class="container-fluid comment-section">
-  <p>
-    <%= @product.highest_rating_comment %>
+  <p><% if @product.comments.exists? %>
+    <%= @product.highest_rating_comment.rating %>
+
     <%= @product.lowest_rating_comment %>
     <%= render 'new_comment' %>
     <%= render 'comments' %>
+    <% end %>
   </p>
 </div>
