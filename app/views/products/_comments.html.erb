@@ -3,7 +3,10 @@
         <div class="row">
             <hr>
             <p><%= comment.user.first_name %> <small><em><%= "#{time_ago_in_words(comment.created_at)} ago" %></em></small></p>
-            <div class="rated" data-score="<%= comment.rating %>"></div>
+            <br>
+            <br>
+            <p><%= "Rating: #{comment.rating}/5" %></p>
+            <br>
             <p><%= comment.body %></p>
         </div>
     <% end %>

@@ -1,7 +1,76 @@
-*= require jquery.raty
+<p> Average Rating:
+  <div class="rated" data-score=" <%= @product.average_rating %>"></div>
+</p>
+show.html.erb
 
-<%= javascript_include_tag 'ratyrate.js', "data-turbolinks-track" => false %>
+$ rails c
+Loading development environment (Rails 5.2.2)
+Switch to inspect mode.
+Rails.application.config.assets.paths
+Rails.application.config.assets.paths
+["C:/Users/Jr/Desktop/tc2/app/assets/config",
+"C:/Users/Jr/Desktop/tc2/app/assets/images",
+"C:/Users/Jr/Desktop/tc2/app/assets/javascripts",
+"C:/Users/Jr/Desktop/tc2/app/assets/stylesheets",
+"C:/Users/Jr/Desktop/tc2/vendor/assets/javascripts",
+"C:/Users/Jr/Desktop/tc2/vendor/assets/stylesheets",
+"C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/coffee-rails-4.2.2/lib/assets/javascripts",
+"C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/jquery-rails-4.3.3/vendor/assets/javascripts",
+"C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/actioncable-5.2.2/lib/assets/compiled",
+"C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activestorage-5.2.2/app/assets/javascripts",
+"C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/actionview-5.2.2/lib/assets/compiled",
+"C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/turbolinks-source-5.2.0/lib/assets/javascripts", #<Pathname:C:/Users/Jr/Desktop/tc2/node_modules>]
 
+$ rails assets:precompile RAILS_ENV=production
+rails aborted!
+ArgumentError: Missing `secret_key_base` for 'production' environment, set this string with `rails credentials:edit`
+C:/Users/Jr/Desktop/tc2/config/environment.rb:5:in `<top (required)>'
+bin/rails:4:in `<main>'
+Tasks: TOP => environment
+(See full trace by running task with --trace)
+
+
+
+
+
+<p id="notice"><%= notice %></p>
+
+<div class="container-fluid product-section">
+
+  <p>
+    <strong>Name:</strong>
+    <%= @product.name %>
+  </p>
+
+  <p>
+    <%= image_tag(@product.image_url, class: "img-responsive product-show") %>
+  </p>
+
+  <p>
+    <strong>Description:</strong>
+    <%= @product.description %>
+  </p>
+
+  <p>
+    <strong>Year:</strong>
+    <%= @product.year %>
+  </p>
+
+  <p>
+    <strong>Price:</strong>
+    <%= @product.price %>
+  </p>
+
+  <%= link_to 'Edit', edit_product_path(@product) %> |
+  <%= link_to 'Back', products_path %>
+</div>
+
+<div class="container-fluid comment-section">
+  <p>
+    <%= @product.highest_rating_comment %>
+    <%= @product.lowest_rating_comment %>
+  </p>
+</div>
 
 
 

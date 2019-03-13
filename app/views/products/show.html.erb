@@ -1,47 +1,39 @@
-<p id="notice"><%= notice %></p>
-
-<div class="container-fluid product-section">
-
-  <p>
-    <strong>Name:</strong>
-    <%= @product.name %>
-  </p>
-
-  <p>
-    <%= image_tag(@product.image_url, class: "img-responsive product-show") %>
-  </p>
-
-  <p>
-    <strong>Description:</strong>
-    <%= @product.description %>
-  </p>
-
-  <p>
-    <strong>Average Rating:</strong>
-    <div class="rated" data-score="<%= @product.average_rating %>"></div>
-  </p>
-
-  <p>
-    <strong>Year:</strong>
-    <%= @product.year %>
-  </p>
-
-  <p>
-    <strong>Price:</strong>
-    <%= @product.price %>
-  </p>
-
-  <%= link_to 'Edit', edit_product_path(@product) %> |
-  <%= link_to 'Back', products_path %>
+<div class="container">
+<div class="row" data-product-id="<%= @product.id %>">
+<% cache @product do %>
+  <div class="col-sm-6 ">
+    <div class="product-image">
+      <%= image_tag(@product.image_url, class: "image-fluid img-thumbnail img-zoom", width: "350") %>
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div>
+      <strong>Name: </strong> <%= @product.name %>
+    </div>
+    <div>
+      <strong>Price: </strong> <%= number_to_currency(@product.price, :unit => "$") %>
+    </div>
+    <div>
+      <strong>Description: </strong><%= @product.description %>
+    </div>
+    <div>
+      <p> Average Rating:
+        <div class="rated" data-score=" <%= @product.average_rating %>"></div>
+      </p>
+    </div>
+  <% end %>
+    <div>
+      <%= render "new_comment" %>
+    </div>
+    <div>
+      <%= render 'comments' %>
+    </div>
+  </div>
 </div>
-
-<div class="container-fluid comment-section">
-  <p><% if @product.comments.exists? %>
-    <%= @product.highest_rating_comment.rating %>
-
-    <%= @product.lowest_rating_comment %>
-    <%= render 'new_comment' %>
-    <%= render 'comments' %>
-    <% end %>
-  </p>
+<div class="product-buttons">
+  <% if current_user %>
+    <%= link_to 'Edit', edit_product_path(@product), class: "btn btn-primary"  %>
+  <% end %>
+  <%= link_to 'Back', products_path, class: "btn btn-success"  %>
+</div>
 </div>

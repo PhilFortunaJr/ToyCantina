@@ -11,10 +11,6 @@ class Product < ApplicationRecord
   end
   end
 
-  def average_rating
-    comments.average(:rating).to_f
-  end
-
   def highest_rating_comment
     comments.rating_desc.first
   end
@@ -23,4 +19,7 @@ class Product < ApplicationRecord
     comments.rating_desc.last
   end
 
+  def average_rating
+    comments.average(:rating).to_f
+  end
 end
