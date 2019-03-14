@@ -27,13 +27,14 @@
     </div>
     <div>
       <%= render 'comments' %>
+      <%= will_paginate @comments %>
     </div>
   </div>
 </div>
 <div class="product-buttons">
   <% if current_user %>
-    <%= link_to 'Edit', edit_product_path(@product), class: "btn btn-primary"  %>
+    <%= link_to 'Edit', edit_product_path(@product), class: "btn btn-dark"  %>
   <% end %>
-  <%= link_to 'Back', products_path, class: "btn btn-success"  %>
+  <%= link_to 'Back', products_path, class: "btn btn-dark"  %>
 </div>
 </div>

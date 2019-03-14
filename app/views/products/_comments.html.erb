@@ -5,7 +5,7 @@
             <p><%= comment.user.first_name %> <small><em><%= "#{time_ago_in_words(comment.created_at)} ago" %></em></small></p>
             <br>
             <br>
-            <p><%= "Rating: #{comment.rating}/5" %></p>
+            <p><div class="rated" data-score="<%= comment.rating %>"></div></p>
             <br>
             <p><%= comment.body %></p>
         </div>
