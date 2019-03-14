@@ -27,7 +27,7 @@
     </div>
     <div>
       <%= render 'comments' %>
-      <%= will_paginate @comments %>
+      <%= will_paginate @comments, renderer: BootstrapPagination::Rails %>
     </div>
   </div>
 </div>
