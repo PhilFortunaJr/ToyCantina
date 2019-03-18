@@ -1,13 +1,19 @@
 <!-- @products.each do |product| %>  -->
-<div class="col-sm-2 col-md-4 product">
-  <h2><%=link_to product.name, product %></h2>
-  <%= image_tag(product.image_url, class: "img-fluid") unless product.image_url.nil? %>
+<div class="col-xs-2 col-sm-2 col-md-4 product">
+
+  <%= link_to product do %>
+  <h2><%= link_to product.name%></h2>
+  <%= image_tag(product.image_url, class: "img-fluid") if product.image_url %>
+  <% end %>
+
+
+
   <dl><%= product.description %></dl>
   <dl>
     <strong>Year:</strong><%= product.year %></dl>
   <dl>
-    <strong>price:</strong>$<%= product.price %></dl>
-  <%= link_to 'Show', product %>
-  <%= link_to 'Edit', edit_product_path(product) %>
-  <%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %>
+    <strong>Price:</strong><%= number_to_currency (product.price) %></dl>
+  <%= link_to 'Show', product, class: 'btn btn-success' %>
+  <%= link_to 'Edit', edit_product_path(product), class: 'btn btn-warning' %>
+  <%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
 </div>
