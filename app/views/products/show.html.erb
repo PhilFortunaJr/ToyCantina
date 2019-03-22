@@ -16,25 +16,38 @@
     <div>
       <strong>Description: </strong><%= @product.description %>
     </div>
+
+    <div>
+      <%= form_with(url: '/payments/create') do |form| %>
+        <%= render partial: "shared/stripe_checkout_button" %>
+       <% end %>
+    </div>
+
     <div>
       <p> Average Rating:
         <div class="rated" data-score=" <%= @product.average_rating %>"></div>
       </p>
     </div>
   <% end %>
+
     <div>
       <%= render "new_comment" %>
     </div>
+
     <div>
       <%= render 'comments' %>
       <%= will_paginate @comments, renderer: BootstrapPagination::Rails %>
     </div>
-  </div>
+    <%= form_with(url: '/payments/create') do |form| %>
+     <%= render partial: "shared/stripe_checkout_button" %>
+    <% end %>
+  </div><!-- end col class -->
 </div>
+
 <div class="product-buttons">
   <% if current_user %>
     <%= link_to 'Edit', edit_product_path(@product), class: "btn btn-dark"  %>
   <% end %>
   <%= link_to 'Back', products_path, class: "btn btn-dark"  %>
 </div>
-</div>
+</div><!-- end container class -->
