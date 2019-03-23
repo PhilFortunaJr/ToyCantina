@@ -2,9 +2,9 @@
   <script
     src="https://checkout.stripe.com/checkout.js" class="stripe-button"
     data-key="pk_test_5K9e8KMaFciDTVRxJb2xotGe008lZTk6HI"
-    data-amount="999"
-    data-name="toycantina.herokuapp"
-    data-description="Example charge"
+    data-amount="<%=@product.price*100.to_i%>"
+    data-name="<%=@product.name%>"
+    data-description="<%=@product.description%>"
     data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
     data-locale="auto">
   </script>

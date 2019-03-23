@@ -20,6 +20,7 @@
     <div>
       <%= form_with(url: '/payments/create') do |form| %>
         <%= render partial: "shared/stripe_checkout_button" %>
+        <%= hidden_field_tag(:product_id, @product.id) %>
        <% end %>
     </div>
 
@@ -38,9 +39,6 @@
       <%= render 'comments' %>
       <%= will_paginate @comments, renderer: BootstrapPagination::Rails %>
     </div>
-    <%= form_with(url: '/payments/create') do |form| %>
-     <%= render partial: "shared/stripe_checkout_button" %>
-    <% end %>
   </div><!-- end col class -->
 </div>
 
