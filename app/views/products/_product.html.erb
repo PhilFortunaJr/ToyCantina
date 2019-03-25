@@ -2,8 +2,10 @@
 <div class="col-xs-2 col-sm-2 col-md-4 product">
 
   <%= link_to product do %>
-  <h2><%= link_to product.name%></h2>
-  <%= image_tag(product.image_url, class: "img-fluid") if product.image_url %>
+    <h2>
+      <%=product.name%>
+    </h2>
+    <%= image_tag(product.image_url, class: "img-fluid") if product.image_url %>
   <% end %>
 
   <dl><%= product.description %></dl>
