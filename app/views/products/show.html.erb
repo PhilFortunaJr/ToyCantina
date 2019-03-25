@@ -3,7 +3,7 @@
 <% cache @product do %>
   <div class="col-sm-6 ">
     <div class="product-image">
-      <%= image_tag(@product.image_url, class: "image-fluid img-thumbnail img-zoom", width: "350") %>
+      <%= image_tag(@product.image_url, class: "image-fluid img-thumbnail img-zoom", data_zoom_image:@product.image_url, width: "350") %>
     </div>
   </div>
   <div class="col-sm-6">
