@@ -67,3 +67,4 @@ gem 'will_paginate-bootstrap', '~> 1.0', '>= 1.0.2'
 gem 'rails-controller-testing'
 gem 'stripe'
 gem "brakeman"
+gem 'dalli'
