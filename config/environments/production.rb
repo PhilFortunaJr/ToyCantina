@@ -104,4 +104,7 @@ Rails.application.configure do
 
 config.action_mailer.default_url_options = { host: 'toycantina.herokuapp.com' }
 
+config.web_socket_server_url = "wss://toycantina.herokuapp.com/cable"
+config.action_cable.allowed_request_origins = ['https://toycantina.herokuapp.com', 'http://toycantina.herokuapp.com']
+
 end

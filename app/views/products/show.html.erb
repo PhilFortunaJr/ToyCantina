@@ -35,6 +35,10 @@
       <%= render "new_comment" %>
     </div>
 
+    <div class="alert alert-info" style="display:none" role="alert">
+      A new comment was posted!
+    </div>
+
     <div>
       <%= render 'comments' %>
       <%= will_paginate @comments, renderer: BootstrapPagination::Rails %>
