@@ -57,13 +57,13 @@ nav {
 nav a {
   text-decoration: none;
   color: #D6F5D6;
-  font-size: 20px;
-  padding: 4px 6px;
+  font-size: 25px;
+  padding: 4px 4px;
+  text-align: center;
 }
 
-.navbar-brand {
-  font-size: 2em;
-  color: #FF0000;
+.nav-link {
+  display: inline;
 }
 
 form {
