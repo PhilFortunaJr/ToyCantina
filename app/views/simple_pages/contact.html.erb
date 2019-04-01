@@ -3,19 +3,19 @@
 <%= flash[:notice] %>
 
 <%= form_with(url:"/simple_pages/thank_you", method: "post", local: true) do |form| %>
-  <div class="row">
+  <div class="row form_control">
     <div class="col-xs-12 col-md-5 col-xl-5">
-      <div class="details form-block">
+      <div class="details form-block contact-page">
         <ul id="details">
-          <li><i class="fas fa-map-marker-alt"></i> Kennesaw, GA USA</li>
-          <li><i class="fas fa-phone"></i> (845)475-2417</li>
-          <li><i class="fas fa-envelope"></i> <a href="https://mail.google.com/mail/?view=cm&fs=1&to=philjrdesigns@gmail.com" title="Opens in Gmail" id="gmail" data-toggle="tooltip" data-placement="bottom" target="_blank">PhilJrDesigns@gmail.com
-          </a></li>
+          <h2><li><i class="fas fa-map-marker-alt"></i> Kennesaw, GA USA</li></h2>
+          <h2><li><i class="fas fa-phone"></i> (845)475-****</li></h2>
+          <h2><li><i class="fas fa-envelope"></i> <a href="https://mail.google.com/mail/?view=cm&fs=1&to=philjrdesigns@gmail.com" title="Opens in Gmail" id="gmail" data-toggle="tooltip" data-placement="bottom" target="_blank">PhilJrDesigns@gmail.com
+          </a></li></h2>
         </ul>
       </div>
     </div>
     <div class="col-xs-12 col-md-7 col-xl-7">
-      <div class="form-group">
+      <div class="form-group contact-page">
         <%= form.label :name %>
         <%= form.text_field :name, class: "form-control", required: "required", placeholder: "Enter Name" %>
       </div>
@@ -27,7 +27,7 @@
         <%= form.label :message %>
         <%= form.text_area :message, class: "form-control", required: "required", placeholder: "Enter Message", title: "Help me Obi-Wan Kenobi you're my only hope.", rows: 5 %>
       </div>
-      <%= form.submit "Send", class: "form_label btn btn-dark" %>
+      <%= form.submit "Send", class: "form_label btn btn-dark contact_button" %>
     </div>
   </div>
   <% end %>

@@ -6,12 +6,12 @@ body {
   background-color: #1C8A43;
   // #79af13
   text-align: center;
-  padding-left: 3em;
-  padding-right: 3em;
+  // padding-left: 3em;
+  // padding-right: 3em;
 }
 
 div {
-  padding: 5px;
+  // padding: 5px;
 }
 
 h1 {
@@ -25,7 +25,11 @@ h2 {
 }
 
 h3 {
-  font-size: 2em;
+  font-size: 1.5em;
+}
+
+.average_rating p {
+  font-size: 1.5em;
 }
 
 p {
@@ -34,34 +38,59 @@ p {
 }
 
 img {
-  max-width: 20%;
+  // max-width: 20%;
 }
 
 .header-logo {
-  max-width: 20vw;
-  // @media(max-width: $sm-breakpoint) {
-    // max-width: 50vw;
+  max-width: 35vw;
+  @media (min-width: 992px) {
+    max-width: 20vw;
+  }
+  // @include media-breakpoint-up(lg) {
+  //   max-width: 20vw;
   // }
 }
 
-nav {
-  position: fixed;
-  max-height: 3.5em;
-  width: 100% !important;
-  top: 0;
-  left: 0;
-  padding: 2px;
-  background: #000;
+// nav {
+//   position: fixed;
+//   max-height: 3.5em;
+//   width: 100% !important;
+//   top: 0;
+//   left: 0;
+//   padding: 2px;
+//   background: #000;
+// }
+//
+.navbar-dark
+.navbar-nav
+.active>.nav-link,
+.navbar-dark
+.navbar-nav
+.nav-link.active,
+.navbar-dark
+.navbar-nav
+.nav-link.show,
+.navbar-dark
+.navbar-nav
+.show>.nav-link  {
+//   text-decoration: none;
+//   color: #D6F5D6;
+  // font-size: 25px;
+//   padding: 4px 4px;
+//   text-align: center;
 }
 
-nav a {
-  text-decoration: none;
-  color: #D6F5D6;
+.navbar-dark
+.navbar-nav
+.nav-link {
   font-size: 25px;
-  padding: 4px 4px;
-  text-align: center;
+    color: #D6F5D6;
 }
 
+.navbar-brand__logo{
+  width: 35px;
+  height: 35px;
+}
 .nav-link {
   display: inline;
 }
@@ -105,3 +134,11 @@ form {
 //   background: #F4E3FC;
 //   color: black;
 // }
+.contact-page{
+  padding: 15px;
+  overflow-wrap: break-word;
+}
+
+.contact_button{
+  margin-bottom: 5px;
+}

@@ -8,13 +8,13 @@
   </div>
   <div class="col-sm-6">
     <div>
-      <strong>Name: </strong> <%= @product.name %>
+      <h1><strong><%= @product.name %></strong></h1>
     </div>
     <div>
-      <strong>Price: </strong> <%= number_to_currency(@product.price, :unit => "$") %>
+      <h2><strong><%= number_to_currency(@product.price, :unit => "$") %></strong></h2>
     </div>
     <div>
-      <strong>Description: </strong><%= @product.description %>
+      <h3><strong><%= @product.description %></strong></h3>
     </div>
 
     <div>
@@ -24,7 +24,7 @@
        <% end %>
     </div>
 
-    <div>
+    <div class="product-rating">
       <p> Average Rating:
         <div class="rated" id="average_rating" data-score=" <%= @product.average_rating %>"></div>
       </p>

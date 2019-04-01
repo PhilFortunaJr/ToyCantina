@@ -9,11 +9,13 @@
     <%= image_tag(product.image_url, class: "img-fluid") if product.image_url %>
   <% end %>
 
-  <dl><%= product.description %></dl>
+
   <dl>
-    <strong>Year:</strong><%= product.year %></dl>
+    <strong>Year:</strong><%= product.year %>
+  </dl>
   <dl>
-    <strong>Price:</strong><%= number_to_currency (product.price) %></dl>
+    <strong>Price:</strong><%= number_to_currency (product.price) %>
+  </dl>
   <%= link_to 'Show', product, class: 'btn btn-success' %>
   <%= link_to 'Edit', edit_product_path(product), class: 'btn btn-warning' %>
   <%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
