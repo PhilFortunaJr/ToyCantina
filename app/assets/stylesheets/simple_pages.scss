@@ -43,6 +43,7 @@ img {
 
 .header-logo {
   max-width: 35vw;
+  margin-top: 25px;
   @media (min-width: 992px) {
     max-width: 20vw;
   }
@@ -80,11 +81,16 @@ img {
 //   text-align: center;
 }
 
+.container-notices {
+  z-index: 1;
+}
 .navbar-dark
 .navbar-nav
 .nav-link {
   font-size: 25px;
     color: #D6F5D6;
+    // z-index: -1;
+    padding-bottom: 15px;
 }
 
 .navbar-brand__logo{

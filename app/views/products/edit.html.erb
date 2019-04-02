@@ -1,6 +1,10 @@
 <h1>Editing Product</h1>
+<h2>Sorry editing a product is an admin privelage only. If you are an admin please make sure you are logged in</h2>
+<% if current_user && current_user.admin? %>
 
 <%= render 'form', product: @product %>
 
 <%= link_to 'Show', @product %> |
 <%= link_to 'Back', products_path %>
+
+<% end %>
